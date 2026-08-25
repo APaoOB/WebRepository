@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SustainHub - SDG Sprints</title>
+    <!-- Bootstrap 5.3 CDN CSS Hook -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body data-bs-theme="light">
+
+    <!-- NAVIGATION SKELETON -->
+    <!-- Required: responsive navbar. Optional demos: sticky footer, navbar search, and color mode toggle. -->
+    <nav class="navbar navbar-expand-lg bg-success navbar-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">SustainHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sdgNav" aria-controls="sdgNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="sdgNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#top">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#targets">SDG Targets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#solutions">Action Hub</a></li>
+                </ul>
+                <form class="d-flex gap-2" role="search"><input class="form-control" type="search" placeholder="Search projects" aria-label="Search projects"><button class="btn btn-light" type="submit">Search</button></form>
+                <button class="btn btn-outline-light ms-lg-3 mt-2 mt-lg-0" id="themeToggle" type="button">Dark mode</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN LAYOUT GRID -->
+    <!-- Responsive page content uses Bootstrap's container and grid system. -->
+    <main id="top" class="container my-5">
+        
+        <!-- CHALLENGE PART A: HERO CONTENT & CAROUSEL -->
+        <!-- Instructions: Create a responsive row. On large screens, the text description 
+             should take up 5 columns, and a slide Carousel should take up 7 columns. 
+             On mobile screens, they should stack vertically (12 columns each). -->
+        <div class="row align-items-center g-5">
+            
+            <!-- HERO TEXT COLUMN (Needs responsive col declarations) -->
+            <!-- Required: buttons, borders/backgrounds, and progress indicator in the hero content. -->
+            <div class="col-12 col-lg-5">
+                <span class="badge text-bg-warning mb-3">SDG 13: Climate Action</span>
+                <h1>Support SDG Goal 13: Climate Action</h1>
+                <p class="lead">Our planet is facing unprecedented environmental challenges. Join the SustainHub community sprint to develop software integrations that track local emissions, organize dynamic community-led restoration events, and shut down dark patterns in greenwashed marketing pipelines.</p>
+                
+                <!-- Action Buttons: Enforce contrast rules and semantic colors -->
+                <!-- Task: Add a primary action button and a secondary outline button -->
+                <div class="my-3 d-flex flex-wrap gap-2">
+                    <a class="btn btn-success" href="#solutions">Start a sprint</a>
+                    <button class="btn btn-outline-success" type="button" data-bs-toggle="modal" data-bs-target="#joinModal">Join the hub</button>
+                </div>
+                <div class="progress mt-4" role="progressbar" aria-label="Community goal progress" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar bg-warning text-dark" style="width: 68%">68% of this month's goal</div></div>
+            </div>
+
+              <!-- CAROUSEL COMPONENT COLUMN (Needs responsive col declarations) -->
+              <!-- Task: Insert a Bootstrap Carousel component inside this column slot.
+                  Configure 3 slides with custom climate target labels. -->
+              <!-- Optional demo: carousel with three climate action targets. -->
+            <div class="col-12 col-lg-7">
+                <div id="targetCarousel" class="carousel slide rounded overflow-hidden shadow" data-bs-ride="carousel">
+                    <div class="carousel-indicators"><button type="button" data-bs-target="#targetCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Target one"></button><button type="button" data-bs-target="#targetCarousel" data-bs-slide-to="1" aria-label="Target two"></button><button type="button" data-bs-target="#targetCarousel" data-bs-slide-to="2" aria-label="Target three"></button></div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active hero-slide slide-one"><div class="carousel-caption text-start"><h2>Measure local emissions</h2><p>Turn community data into practical climate decisions.</p></div></div>
+                        <div class="carousel-item hero-slide slide-two"><div class="carousel-caption text-start"><h2>Restore shared spaces</h2><p>Coordinate volunteers and track every new tree.</p></div></div>
+                        <div class="carousel-item hero-slide slide-three"><div class="carousel-caption text-start"><h2>Protect blue habitats</h2><p>Map cleanup work where shorelines need it most.</p></div></div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#targetCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button><button class="carousel-control-next" type="button" data-bs-target="#targetCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CHALLENGE PART B: ACTION CARDS SECTION -->
+        <!-- Instructions: Create a grid below containing three action cards. 
+             - On desktop (lg): Display as 3 equal columns (4 columns each in the 12-col system).
+             - On tablet (md): Display as a 2-column layout (First two cards side-by-side, third card wrapping below).
+             - On mobile (xs/sm): Display stacked vertically (12 columns each). -->
+            <!-- Required: responsive card grid with button actions. -->
+        <h2 id="solutions" class="my-5 text-center">Community Solutions</h2>
+        <div class="row g-4">
+            
+            <!-- Card 1 Slot -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Forest Restoration</h5>
+                        <p class="card-text">Organize tree planting drives and analyze canopy coverage metrics dynamically using public satellite datasets.</p>
+                        <!-- Button goes here -->
+                        <button class="btn btn-outline-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#projectPanel">Explore project</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 Slot -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Energy Trackers</h5>
+                        <p class="card-text">Develop software dashboards for businesses to log real-time energy expenditures and locate carbon bottlenecks.</p>
+                        <!-- Button goes here -->
+                        <button class="btn btn-outline-success" type="button" data-bs-toggle="tooltip" data-bs-title="Coming soon: connect your energy provider">View toolkit</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 Slot -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Ocean Cleanups</h5>
+                        <p class="card-text">Map localized plastic deposition vectors and coordinate volunteer cleanup deployments on regional shorelines.</p>
+                        <!-- Button goes here -->
+                        <button class="btn btn-outline-success" type="button" data-bs-toggle="popover" data-bs-title="Ocean data" data-bs-content="Use open shoreline reports to plan your next deployment.">See data notes</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Required: accordion and spinner. The button group and iconic link are included in the status panel. -->
+        <section id="targets" class="row g-4 my-5">
+            <div class="col-12 col-lg-7"><div class="accordion" id="targetAccordion"><div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#targetOne">Target 13.1: Resilience</button></h2><div id="targetOne" class="accordion-collapse collapse show" data-bs-parent="#targetAccordion"><div class="accordion-body">Build climate resilience through local projects, shared data, and faster community response.</div></div></div><div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#targetTwo">Target 13.2: Policy</button></h2><div id="targetTwo" class="accordion-collapse collapse" data-bs-parent="#targetAccordion"><div class="accordion-body">Put climate action into planning, budgets, and everyday decisions.</div></div></div></div></div>
+            <div class="col-12 col-lg-5"><div class="border border-success rounded p-4 bg-success-subtle h-100"><h2 class="h4">Sprint status</h2><div class="spinner-border text-success my-3" role="status"><span class="visually-hidden">Loading status</span></div><div class="btn-group d-flex" role="group" aria-label="Sprint filters"><button class="btn btn-success" type="button">Active</button><button class="btn btn-outline-success" type="button">Completed</button></div><a class="icon-link mt-3" href="#solutions">Browse all solutions <span aria-hidden="true">&#8594;</span></a></div></div>
+        </section>
+        <!-- Required: floating label form. The subscribe button reuses the modal interaction. -->
+        <section class="row g-4 mb-5"><div class="col-12 col-md-6"><div class="form-floating"><input class="form-control" id="emailInput" type="email" placeholder="name@example.com"><label for="emailInput">Email for sprint updates</label></div></div><div class="col-12 col-md-6"><div class="d-flex align-items-center h-100"><button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#joinModal">Subscribe</button></div></div></section>
+    </main>
+
+    <!-- Optional demo: sticky footer is enabled by the flex layout in style.css. -->
+    <footer class="bg-dark text-white py-4 mt-auto"><div class="container d-flex flex-column flex-sm-row justify-content-between gap-2"><span>SustainHub community sprint</span><span class="text-white-50">Small actions, measurable change.</span></div></footer>
+
+    <!-- Required: modal. Optional demo: offcanvas project details. -->
+    <div class="modal fade" id="joinModal" tabindex="-1" aria-labelledby="joinModalLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h2 class="modal-title fs-5" id="joinModalLabel">Join the next sprint</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">Choose a community solution above, then bring your skills to the next climate action sprint.</div><div class="modal-footer"><button type="button" class="btn btn-success" data-bs-dismiss="modal">Count me in</button></div></div></div></div>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="projectPanel" aria-labelledby="projectPanelLabel"><div class="offcanvas-header"><h2 class="offcanvas-title h5" id="projectPanelLabel">Forest Restoration</h2><button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button></div><div class="offcanvas-body">Start with a local planting partner, record the location, and publish canopy progress for the community.</div></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JavaScript activates tooltips, popovers, and the custom color mode switch. -->
+    <script>
+        // Required: initialize components that need JavaScript.
+        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach((element) => new bootstrap.Tooltip(element));
+        document.querySelectorAll('[data-bs-toggle="popover"]').forEach((element) => new bootstrap.Popover(element));
+        // Optional demo: switch Bootstrap's built-in light/dark color mode.
+        document.querySelector('#themeToggle').addEventListener('click', () => {
+            const darkMode = document.body.getAttribute('data-bs-theme') === 'dark';
+            document.body.setAttribute('data-bs-theme', darkMode ? 'light' : 'dark');
+            document.querySelector('#themeToggle').textContent = darkMode ? 'Dark mode' : 'Light mode';
+        });
+    </script>
+</body>
+</html>
