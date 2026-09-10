@@ -9,33 +9,32 @@ h1 {
     margin-bottom: 20px;
 }
 
+.position-stage {
+    position: relative;
+    width: 540px;
+    height: 420px;
+}
+
 .box {
     width: 180px;
     height: 180px;
     position: absolute;
-    box-sizing: border-box;
-    border: 3px solid #111;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
 }
 
 .yellow-box {
     background-color: #fcd116;
-    top: 70px;
-    left: 40px;
+    top: 0;
+    left: 0;
 }
 
 .blue-box {
     background-color: #002b7f;
-    top: 150px;
-    left: 180px;
+    top: 80px;
+    left: 140px;
 }
 
 .red-box {
     background-color: #ce1126;
-    top: 230px;
-    left: 320px;
+    top: 160px;
+    left: 280px;
 }

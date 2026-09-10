@@ -5,7 +5,7 @@ Bootstrap is a very dynamic and responsive library.
 As explained in class this library allows for quick design and implementation given a big list of examples and clear explanation on how to customize them.
 In this exercise you need to implement at least one of each of these components
 
-- Navbar and/or tabs 
+- Navbar and/or tabs
 - Accordion
 - Buttons
 - Button groups
@@ -25,10 +25,10 @@ Select 5 elements from the following list and make a small demo of how would you
 
 ---
 
-- Color mode
-- Navbar with search field
-- Sticky footer
-- Collapsible sidebar
+- Color mode //done
+- Navbar with search field //done
+- Sticky footer //done
+- Collapsible sidebar //done
 - Drop downs with icon
 - Offcanvas content
 - Pagination on content
@@ -36,7 +36,7 @@ Select 5 elements from the following list and make a small demo of how would you
 - Badges with image and action
 - Breadcrumbs with icons
 - Loading buttons
-- Carousel with title and text
+- Carousel with title and text //done
 - Hero with centered screenshot
 - Scrollspy
 - Toast

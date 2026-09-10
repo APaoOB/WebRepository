@@ -4,7 +4,7 @@ This exercise will guide us to learn most of the html basic elements. This guide
 
 ---
 
-### Basic structures
+## Basic structures
 
 - Add your **name** as the main title
 - Place your current job title and address

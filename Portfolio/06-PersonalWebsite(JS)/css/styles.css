@@ -1,3 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@500;700&family=Sacramento&display=swap');
+
+:root {
+  --sky: #b2c1e6;
+  --surface: #c7e1e4;
+  --alternate: #c9e9e2;
+  --ink: #173b4d;
+  --primary: #176b87;
+  --secondary: #58afac;
+  --accent: #e17531;
+  --form: #f7f0ca;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  background: var(--sky);
+  background: var(--sky);
+  color: var(--ink);
+  font-family: 'Merriweather', serif;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.hero {
+  position: relative;
+  min-height: 440px;
+  padding: 70px 5% 40px;
+  overflow: hidden;
+  background-color: var(--sky);
+  background-image: url('../images/mountain.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: min(760px, 90vw) auto;
+}
+
+.hero table {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  background: rgb(247 255 252 / 80%);
+}
+
+.cloud {
+  position: sticky;
+  z-index: 2;
+  width: 130px;
+  height: auto;
+}
+
+.cloud-left {
+  float: left;
+  margin-left: 4%;
+}
+
+.cloud-right {
+  float: right;
+  margin-right: 4%;
+}
+
+h1 {
+  margin: 50px;
+  color: var(--primary);
+  font-family: 'Sacramento', cursive;
+  font-size: 5.5rem;
+  line-height: 1;
+}
+
+h2,
+h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+  padding-bottom: 10px;
+  color: var(--secondary);
+  font-size: 2.5rem;
+}
+
+h3 {
+  color: var(--accent);
+}
+
+a {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a:hover {
+  color: green;
+}
+
+nav ul,
+.content-section > ul,
+.content-section > ol {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.content-section {
+  padding: 45px 8%;
+  background: var(--surface);
+}
+
+.content-section:nth-of-type(even) {
+  background: var(--alternate);
+}
+
+.destination-hero {
+  min-height: 300px;
+}
+
+.destination-section {
+  padding: 45px 8%;
+  background: var(--surface);
+}
+
+.destination-section:nth-of-type(even) {
+  background: var(--alternate);
+}
+
+.destination-section ul {
+  display: inline-block;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.destination-section > img:not(.country-flag) {
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+.country-flag {
+  display: block;
+  margin: 15px auto 0;
+}
+
+hr {
+  width: 4%;
+  margin: 100px auto;
+  border: 6px dotted #eaf6f6;
+  border-bottom: 0;
+}
+
+.school-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.school-logo {
+  width: 100px;
+  max-width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.team-table {
+  width: min(100%, 1000px);
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 18px;
+}
+
+.team-table td {
+  padding: 18px;
+  background: var(--surface);
+  vertical-align: top;
+}
+
+.team-table img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.schedule-table {
+  width: 100%;
+  overflow: auto;
+  border-collapse: collapse;
+  background: var(--surface);
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 8px;
+  border: 1px solid var(--secondary);
+}
+
+form {
+  max-width: 700px;
+  margin: 30px auto 0;
+  padding: 25px;
+  border: 3px dotted var(--secondary);
+  background: var(--form);
+  text-align: left;
+}
+
+form p {
+  display: grid;
+  gap: 5px;
+}
+
+input,
+select,
+textarea,
+button {
+  padding: 10px;
+  border: 1px solid var(--secondary);
+  border-radius: 10px;
+  background: #fffdf8;
+  font: inherit;
+}
+
+input[type='checkbox'],
+input[type='color'] {
+  width: auto;
+}
+
+button {
+  color: white;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+button:hover {
+  background: green;
+}
+
+@media (max-width: 700px) {
+  h1 {
+    margin: 25px;
+    font-size: 4rem;
+  }
+
+  .hero table,
+  .team-table,
+  .team-table tbody,
+  .team-table tr,
+  .team-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .team-table tr:not(:first-child) {
+    margin-bottom: 18px;
+  }
+
+  .schedule-section {
+    overflow-x: auto;
+  }
 }

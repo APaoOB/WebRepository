@@ -12,6 +12,12 @@ main {
     flex: 1;
 }
 
+/* Keep navigation links from hiding section headings behind the sticky navbar. */
+#targets,
+#solutions {
+    scroll-margin-top: 5rem;
+}
+
 /* Give carousel images a consistent height without breaking mobile width. */
 .carousel-item img {
     height: 390px;

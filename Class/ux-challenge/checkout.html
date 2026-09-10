@@ -42,7 +42,7 @@
                     </label>
                     <label class="shipping-box-standard">
                         <div>
-                            <input type="radio" name="shipping_speed" value="standard" checked style="margin-right: 8px;">
+                            <input type="radio" name="shipping_speed" value="standard" style="margin-right: 8px;">
                             <span>Eco-Standard Saver (Un-carbon-offsetted)</span>
                         </div>
                         <span>$2.99</span>
@@ -81,9 +81,9 @@
             // Prevent the form from submitting and refreshing the page
             event.preventDefault();
             const baseProductPrice = 24.99;
-            const vipChecked = document.getElementById('vip_warranty').checked;
+            const vipChecked = document.getElementById('vip_warranty');
             const vipPrice = vipChecked ? 4.99 : 0.00;
-            const selectedShippingInput = document.querySelector('input[name="shipping_speed"]:checked');
+            const selectedShippingInput = document.querySelector('input[name="shipping_speed"]');
             const shippingSpeed = selectedShippingInput ? selectedShippingInput.value : 'none';
             const shippingPrice = shippingSpeed === 'express' ? 14.99 : 2.99;
             const treeChecked = document.getElementById('tree_donation').checked;
