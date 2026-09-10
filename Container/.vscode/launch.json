@@ -1,0 +1,74 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Express API",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/${config:generation}/setup-test/mern-app/server/server.js",
+      "cwd": "${workspaceFolder}/${config:generation}/setup-test/mern-app/server",
+      "skipFiles": ["<node_internals>/**", "**/node_modules/**"]
+    },
+    {
+      "name": "Launch Next.js Frontend",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/${config:generation}/setup-test/mern-app/client/node_modules/next/dist/bin/next",
+      "runtimeArgs": ["--inspect"],
+      "cwd": "${workspaceFolder}/${config:generation}/setup-test/mern-app/client",
+      "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+      "serverReadyAction": {
+        "action": "debugWithChrome",
+        "killOnServerStop": true,
+        "pattern": "- Local:.+(https?://.+)",
+        "uriFormat": "%s",
+        "webRoot": "${workspaceFolder}/${config:generation}/setup-test/mern-app/client"
+      }
+    },
+    {
+      "name": "JS File",
+      "type": "node",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${file}",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Node File",
+      "type": "node",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+      "program": "${file}"
+    },
+    {
+      "name": "Next.js Project",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/${input:projectName}/node_modules/next/dist/bin/next",
+      "runtimeArgs": ["--inspect"],
+      "skipFiles": ["<node_internals>/**"],
+      "cwd": "${workspaceFolder}/${input:projectName}",
+      "serverReadyAction": {
+        "action": "debugWithChrome",
+        "killOnServerStop": true,
+        "pattern": "- Local:.+(https?://.+)",
+        "uriFormat": "%s",
+        "webRoot": "${workspaceFolder}/${input:projectName}"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "projectName",
+      "type": "promptString",
+      "description": "Enter the exact folder name of your Next.js project (e.g., next-debug-test)",
+      "default": "...project_path.../my-project"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full MERN Stack",
+      "configurations": ["Launch Express API", "Launch Next.js Frontend"]
+    }
+  ]
+}

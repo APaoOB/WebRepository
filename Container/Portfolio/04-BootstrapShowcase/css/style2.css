@@ -1,0 +1,54 @@
+/* Custom page colors complement Bootstrap's semantic success and warning colors. */
+:root {
+    --mist: #eef6f0;
+}
+
+/* Flex column layout keeps the footer at the bottom on short pages. */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--mist);
+    color: #17352a;
+}
+
+/* Let the main content grow so the footer behaves like a sticky footer. */
+main {
+    flex: 1;
+}
+
+/* Stable carousel height keeps the layout from jumping between slides. */
+.hero-slide {
+    min-height: 390px;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Each slide uses a climate-related photo with a readable color overlay. */
+.slide-one {
+    background: linear-gradient(120deg, rgba(13, 76, 52, .96), rgba(35, 145, 94, .55)), url('https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=1200&q=80');
+}
+
+.slide-two {
+    background: linear-gradient(120deg, rgba(102, 75, 24, .95), rgba(198, 154, 54, .48)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80');
+}
+
+.slide-three {
+    background: linear-gradient(120deg, rgba(11, 67, 86, .96), rgba(24, 149, 167, .5)), url('https://images.unsplash.com/photo-1484291470158-b8f8d608850d?auto=format&fit=crop&w=1200&q=80');
+}
+
+.carousel-caption {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, .5);
+}
+
+/* Bootstrap 5.3 color mode override for the optional dark mode demo. */
+[data-bs-theme="dark"] {
+    --mist: #15241d;
+}
+
+[data-bs-theme="dark"] .card,
+[data-bs-theme="dark"] .accordion-item,
+[data-bs-theme="dark"] .form-control {
+    background-color: #21382d;
+    color: #f2f8f3;
+}

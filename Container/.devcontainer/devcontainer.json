@@ -1,0 +1,65 @@
+{
+  "name": "Web App Dev Container",
+  "image": "up_com111-image:latest",
+  // Tells VS Code how to build the container's image.
+  "build": {
+    "dockerfile": "Dockerfile",
+    // The "context" is the parent directory (your project root).
+    "context": ".."
+  },
+  "mounts": [
+    "source=projectname-bashhistory,target=/commandhistory,type=volume"
+  ],
+  // This is the key part for your request. It mounts your local project folder
+  // into the container at the specified path.
+  "workspaceMount": "source=${localWorkspaceFolder},target=/app,type=bind",
+  // This sets the default folder that VS Code will open inside the container.
+  "workspaceFolder": "/app",
+  // This command runs after the container has been created. It's the perfect place
+  // to install your Python dependencies from your local requirements.txt file.
+  // "postCreateCommand": "chmod +x .devcontainer/post-create.sh && .devcontainer/post-create.sh",
+  "postCreateCommand": "/bin/bash .devcontainer/post-create.sh",
+  // Optional but highly recommended: Customize your VS Code setup inside the container.
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      // A list of extensions to install automatically inside the container.
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "ritwickdey.LiveServer",
+        "ms-vscode.js-debug",
+        "mongodb.mongodb-vscode",
+        "postman.postman-for-vscode"
+      ]
+    }
+  },
+  // Expose and forward ports safely from the container to the host computer
+  // 3000: Next.js frontend / Express default
+  // 5000: Express.js backend API
+  // 5500: Live Server default port
+  "forwardPorts": [3000, 5000, 5500],
+  // Ensure ports are labeled correctly in the VS Code Ports tab
+  "portsAttributes": {
+    "3000": {
+      "label": "Next.js Frontend / Express",
+      "onAutoForward": "notify"
+    },
+    "5000": {
+      "label": "Express API Backend",
+      "onAutoForward": "notify"
+    },
+    "5500": {
+      "label": "Live Server (HTML/CSS)",
+      "onAutoForward": "notify"
+    }
+  },
+  // Forward the host's Git credentials (SSH keys or HTTPS credentials) automatically
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "remoteUser": "com111-user"
+}
