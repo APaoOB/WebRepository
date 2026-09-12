@@ -1,0 +1,6 @@
+Activities help me have a better grasp on how the codes work, however I used ai for things I didn't understood or couldn't manage to debug. 
+I tried using them as templates most of the time, and used AI as a tool for shortcuts and understanding. During the midterm and the project
+I realized that was an good choice because I could use past codes to make the changes needed or I could understand the logic enough to program it myself.
+I will admit, java still confuses me as for sometimes I write somethinf that looks correct, feels correct but the moment I try the webpage it doesn't goes
+as planned of doesn't work at all, so I mainly use it for this area.
+Also, github was STRESSING me because it was my first time but over the past few weeks I have learn how to do it and I'm now able to do it automatically.
