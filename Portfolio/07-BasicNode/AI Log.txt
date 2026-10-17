@@ -6,3 +6,7 @@ AI: Use const with require() to load a package and store its exported function:
 Before running the script, install the package in your project folder:
     npm install star-wars-quotes
 
+My instruction (While in README.md): How can I import a random superhero and/or supervillain, how does the function work
+AI: randomSuperhero and randomSupervillain are functions provided by their packages. Calling one picks and returns a name; each time you run node index.js, you’ll usually get a different pair.
+import { randomSuperhero } from "superheroes";
+import { randomSupervillain } from "supervillains";

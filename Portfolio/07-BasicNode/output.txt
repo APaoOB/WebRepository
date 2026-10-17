@@ -1,0 +1,45 @@
+Require
+
+me: 
+npm install star-wars-quotes
+me: 
+node
+me: 
+const sw = require("star-wars-quotes");
+me: 
+console.log(sw());
+terminal: 
+Your eyes can deceive you. Don’t trust them.
+    -Obi-Wan Kenobi
+
+
+
+Multiple calls
+
+me:
+npm install superheroes
+me:
+npm install supervillains
+terminal:
+4 packages are looking for funding
+  run `npm fund` for details
+me:
+npm fund
+
+index.js
+
+me:
+node index.js
+Terminal: 
+Judomaster battles Bizarro!
+
+
+
+Read file
+
+index.js
+
+me:
+node index.js
+Terminal:
+... Han shot first! ...
