@@ -8,7 +8,7 @@ These exercises will guide us on how to create a simple Node script and how to e
 
 Create a simple node script that greets the world to console.
 **Remember**: _npm init_ will initialize the program.
-
+//Done
 ---
 
 ### 'require' tool

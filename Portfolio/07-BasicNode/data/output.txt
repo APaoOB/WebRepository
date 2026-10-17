@@ -1,0 +1,11 @@
+me: 
+npm install star-wars-quotes
+me: 
+node
+me: 
+const sw = require("star-wars-quotes");
+me: 
+console.log(sw());
+terminal: 
+Your eyes can deceive you. Don’t trust them.
+    -Obi-Wan Kenobi

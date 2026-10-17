@@ -1,0 +1,8 @@
+My instruction (While in README.md): in node, how can you create a constant that needs a package and what should the instruction include
+
+AI: Use const with require() to load a package and store its exported function:
+    const sw = require("star-wars-quotes");
+    console.log(sw());
+Before running the script, install the package in your project folder:
+    npm install star-wars-quotes
+
