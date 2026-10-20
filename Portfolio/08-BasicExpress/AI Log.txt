@@ -1,0 +1,9 @@
+code given in the activity
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
+code corrected by the AI after postman didn't work
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
