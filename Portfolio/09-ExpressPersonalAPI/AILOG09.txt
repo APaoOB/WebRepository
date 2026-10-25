@@ -1,0 +1,44 @@
+The post wasn't working correctly
+
+Me: okey help me step by step since the beggining
+
+Step 1: Start the server
+In VS Code, open Terminal → New Terminal. Run:
+cd /app/WebRepository/Portfolio/09-ExpressPersonalAPI
+npm start
+Leave the terminal open. You should see:
+Express API listening on http://localhost:3000
+When you see that message, reply “ready” and we’ll test the page in your browser before moving on to Postman.
+
+me: ready
+Step 2: Open the app
+In your browser, go to:
+
+http://localhost:3000
+
+You should see the name form and TODO List. Try entering a name and submitting; the page should greet you and add that name as a link.
+
+Tell me what you see, and we’ll continue to the first Postman request.
+
+me: okey next step
+Step 3: Check the task list in Postman
+Open a new request and set:
+
+Method: GET
+URL: http://localhost:3000/task
+Params: leave empty
+Click Send. You should see a JSON response like [] if there are no tasks, or a list of task names if you’ve added some.
+
+Tell me what response you get, and we’ll do the next request.
+
+me: done
+Step 4: Add a task using Postman
+Create a new request and set:
+
+Method: POST
+URL: http://localhost:3000/task
+Open Body → select x-www-form-urlencoded
+Add one row:
+Key: task
+Value: Practice Express API
+Click Send. You should get a redirect response, then refresh http://localhost:3000 in your browser to see the task in the TODO list.

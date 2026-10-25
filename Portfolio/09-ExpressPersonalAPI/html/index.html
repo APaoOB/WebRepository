@@ -9,16 +9,52 @@
 </head>
 
 <body>
-    <% if (locals.error) { %>
-        <h3>
-            <%= error %>
-        </h3>
-        <% } %>
-            <form action="/greet" method="get">
-                Register:
-                <input type="text" name="name" id="name" placeholder="Name">
-                <input type="submit" value="go next">
-            </form>
+    <% if (error) { %>
+        <p role="alert"><%= error %></p>
+    <% } %>
+
+    <form action="/greet" method="get">
+        <label for="name">Register:</label>
+        <input type="text" name="name" id="name" placeholder="Name" required>
+        <input type="submit" value="Go">
+    </form>
+
+    <% if (greeting) { %>
+        <p><%= greeting %></p>
+    <% } %>
+
+    <% if (names.length) { %>
+        <h2>People</h2>
+        <ul>
+            <% names.forEach((name, index) => { %>
+                <li><a href="/greet?index=<%= index %>"><%= name %></a></li>
+            <% }); %>
+        </ul>
+    <% } %>
+
+    <h2>TODO List</h2>
+    <form action="/task" method="post">
+        <label for="task">New task:</label>
+        <input type="text" name="task" id="task" required>
+        <button type="submit">Add task</button>
+    </form>
+
+    <ul>
+        <% tasks.forEach((task, index) => { %>
+            <li>
+                <span><%= task %></span>
+                <form action="/task/move" method="post">
+                    <input type="hidden" name="index" value="<%= index %>">
+                    <button type="submit" name="direction" value="up" aria-label="Move <%= task %> up" <%= index === 0 ? "disabled" : "" %>>↑</button>
+                    <button type="submit" name="direction" value="down" aria-label="Move <%= task %> down" <%= index === tasks.length - 1 ? "disabled" : "" %>>↓</button>
+                </form>
+                <form action="/task/delete" method="post">
+                    <input type="hidden" name="index" value="<%= index %>">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
 
 </body>
 

@@ -51,3 +51,11 @@ This route will only be accesible via Postman.
 ### ERROR handling
 
 - In the **/greet** endpoint that receives the call for forwarding to _wazzup.html_ check on the index value to see if it is within range. If it is not, using the next parameter, create a new handler that outputs the error message in the index page.
+
+---
+
+### Run the app
+
+Install the dependencies with `npm install`, then start the server with `npm start`. The app listens on port 3000 by default; set the `PORT` environment variable to use a different port.
+
+Names and tasks are kept in memory and are cleared when the server restarts. The `GET /task` route returns the task list as JSON, and `PUT /greet/:name` adds a name and returns the full name list as JSON.
