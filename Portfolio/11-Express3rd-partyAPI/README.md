@@ -7,6 +7,8 @@
 - Subscribe to the "Current weather and forecast collection"
 - Look for the free option and get the API key
 - Consult the documentation at: https://openweathermap.org/current
+- Set the key as the `OPENWEATHER_API_KEY` environment variable before starting the server. Do not put the key in the source code or commit it.
+- Run `npm install`, then start the server with `npm start` and open `http://localhost:3000`. If port 3000 is already in use, set `PORT=3001` and open `http://localhost:3001`.
 
 ---
 
